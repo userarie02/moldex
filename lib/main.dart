@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'login.dart';
-import 'signup.dart';
+import 'package:iotproj/pages/login.dart';
+import 'package:iotproj/pages/signup.dart';
 
 void main() {
   runApp(const MyApp());
