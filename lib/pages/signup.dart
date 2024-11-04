@@ -5,11 +5,11 @@ class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
 
   @override
-  _SignupPageState createState() => _SignupPageState();
+  SignupPageState createState() => SignupPageState();
 }
 
-class _SignupPageState extends State<SignupPage> {
-  void _navigateToLogin() {
+class SignupPageState extends State<SignupPage> {
+  void navigateToLogin() {
     Navigator.push(
       context,
       PageRouteBuilder(
@@ -63,7 +63,7 @@ class _SignupPageState extends State<SignupPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      "Sign Up with MoldShield Today!",
+                      "Sign Up with MoldShield Tomorrow!",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 36,
@@ -170,7 +170,7 @@ class _SignupPageState extends State<SignupPage> {
                         children: <Widget>[
                           const Text("Already have an account?"),
                           TextButton(
-                            onPressed: _navigateToLogin,
+                            onPressed: navigateToLogin,
                             child: const Text("Sign In"),
                           ),
                         ],

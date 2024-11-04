@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.iotproj.app-mergeDebugResources-9:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.iotproj.app-mergeDebugResources-25:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\eange\\Desktop\\iotproj\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\Junyl JB\\Documents\\Project time\\moldex\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
