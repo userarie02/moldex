@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:iotproj/pages/signup.dart';
+import 'package:iotproj/pages/homepage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  State<LoginPage> createState() => LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  void _navigateToSignup() {
+class LoginPageState extends State<LoginPage> {
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  void navigateToSignup() {
     Navigator.push(
       context,
       PageRouteBuilder(
@@ -35,6 +39,43 @@ class _LoginPageState extends State<LoginPage> {
         },
       ),
     );
+  }
+
+  void navigateToHomepage() {
+    String username = usernameController.text;
+    String password = passwordController.text;
+
+    const String correctUsername = 'correctUsername';
+    const String correctPassword = 'correctPassword';
+
+    if (username == correctUsername && password == correctPassword) {
+      Navigator.pushReplacement(
+        context,
+        PageRouteBuilder(
+          transitionDuration: const Duration(milliseconds: 600),
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const Homepage(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            const begin = Offset(0.0, 1.0);
+            const end = Offset.zero;
+            const curve = Curves.easeInOut;
+
+            var tween =
+                Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+            var fadeAnimation =
+                CurvedAnimation(parent: animation, curve: curve);
+
+            return SlideTransition(
+              position: animation.drive(tween),
+              child: FadeTransition(
+                opacity: fadeAnimation,
+                child: child,
+              ),
+            );
+          },
+        ),
+      );
+    }
   }
 
   @override
@@ -112,10 +153,11 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ],
                           ),
-                          child: const Column(
+                          child: Column(
                             children: <Widget>[
                               TextField(
-                                decoration: InputDecoration(
+                                controller: usernameController,
+                                decoration: const InputDecoration(
                                   hintText: "Email",
                                   hintStyle: TextStyle(
                                       color:
@@ -124,10 +166,11 @@ class _LoginPageState extends State<LoginPage> {
                                   contentPadding: EdgeInsets.all(16),
                                 ),
                               ),
-                              Divider(color: Colors.grey),
+                              const Divider(color: Colors.grey),
                               TextField(
                                 obscureText: true,
-                                decoration: InputDecoration(
+                                controller: passwordController,
+                                decoration: const InputDecoration(
                                   hintText: "Password",
                                   hintStyle: TextStyle(
                                       color:
@@ -149,7 +192,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         const SizedBox(height: 40),
                         MaterialButton(
-                          onPressed: () {},
+                          onPressed: navigateToHomepage,
                           height: 50,
                           color: const Color.fromARGB(255, 136, 209, 139),
                           shape: RoundedRectangleBorder(
@@ -171,7 +214,7 @@ class _LoginPageState extends State<LoginPage> {
                           children: <Widget>[
                             const Text("Don't have an account?"),
                             TextButton(
-                              onPressed: _navigateToSignup,
+                              onPressed: navigateToSignup,
                               child: const Text("Sign up"),
                             ),
                           ],
