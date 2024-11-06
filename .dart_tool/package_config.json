@@ -93,7 +93,7 @@
     },
     {
       "name": "go_router",
-      "rootUri": "file:///C:/Users/eange/AppData/Local/Pub/Cache/hosted/pub.dev/go_router-14.3.0",
+      "rootUri": "file:///C:/Users/eange/AppData/Local/Pub/Cache/hosted/pub.dev/go_router-14.4.1",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -212,7 +212,7 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-11-04T13:19:27.120130Z",
+  "generated": "2024-11-06T07:42:33.237974Z",
   "generator": "pub",
   "generatorVersion": "3.3.2"
 }
