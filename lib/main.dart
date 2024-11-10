@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iotproj/pages/signup.dart';
 import 'package:iotproj/pages/login.dart';
+import 'package:iotproj/pages/homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       home: const LoginPage(),
       routes: {
         '/signup': (context) => const SignupPage(),
+        '/home': (context) => const Homepage(),
       },
     );
   }

@@ -82,12 +82,9 @@ class LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        // Make the content scrollable
         child: Container(
           width: double.infinity,
-          height: MediaQuery.of(context)
-              .size
-              .height, // Make sure the height matches the screen size
+          height: MediaQuery.of(context).size.height,
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
@@ -101,24 +98,49 @@ class LoginPageState extends State<LoginPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const SizedBox(height: 80),
+              const SizedBox(height: 50),
               const Padding(
-                padding: EdgeInsets.all(20),
+                padding: EdgeInsets.all(15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
-                      "Welcome to MoldShield!",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 36,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    Row(
+                      children: [
+                        Flexible(
+                          child: Image(
+                            image: AssetImage('assets/images/mainlogo.png'),
+                            height: 130,
+                            width: 130,
+                          ),
+                        ),
+                        SizedBox(width: 8),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Welcome to",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "MoldShield!",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 34,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 14),
               Expanded(
                 child: Container(
                   decoration: const BoxDecoration(
@@ -192,7 +214,8 @@ class LoginPageState extends State<LoginPage> {
                         ),
                         const SizedBox(height: 40),
                         MaterialButton(
-                          onPressed: navigateToHomepage,
+                          onPressed:
+                              navigateToHomepage, // This calls navigateToHomepage
                           height: 50,
                           color: const Color.fromARGB(255, 136, 209, 139),
                           shape: RoundedRectangleBorder(
