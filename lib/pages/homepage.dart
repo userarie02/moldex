@@ -218,7 +218,7 @@ class HomePageState extends State<Homepage> {
                         : Alignment.centerLeft,
                     children: [
                       AnimatedAlign(
-                        duration: const Duration(milliseconds: 300),
+                        duration: const Duration(milliseconds: 230),
                         alignment: isAntiMoldEjectorOn
                             ? Alignment.centerRight
                             : Alignment.centerLeft,
@@ -272,7 +272,7 @@ class HomePageState extends State<Homepage> {
                         : Alignment.centerLeft,
                     children: [
                       AnimatedAlign(
-                        duration: const Duration(milliseconds: 300),
+                        duration: const Duration(milliseconds: 230),
                         alignment: isDehumidifierOn
                             ? Alignment.centerRight
                             : Alignment.centerLeft,
