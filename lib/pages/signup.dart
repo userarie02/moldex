@@ -63,7 +63,7 @@ class SignupPageState extends State<SignupPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      "Sign Up with MoldShield Tomorrow!",
+                      "Sign Up with MoldShield Today!",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 36,
@@ -74,7 +74,6 @@ class SignupPageState extends State<SignupPage> {
                 ),
               ),
               const SizedBox(height: 20),
-              // This Container will take the remaining height
               Container(
                 decoration: const BoxDecoration(
                   color: Colors.white,
