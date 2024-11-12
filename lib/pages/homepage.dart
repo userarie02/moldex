@@ -10,31 +10,14 @@ class Homepage extends StatefulWidget {
 class HomePageState extends State<Homepage> {
   int currentIndex = 0;
 
-<<<<<<< HEAD
-  // Switch states for toggles
-  bool isAntiMoldEjectorOn = false;
-  bool isDehumidifierOn = false;
-=======
   // SWITH FOR TOGGLES
   bool isAntiMoldEjectorOn = false;
   bool isDehumidifierOn = false;
   bool isPowerOn = false;
->>>>>>> arie
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< HEAD
-      appBar: AppBar(
-        title: const Text("Mold Shield"),
-      ),
-      body: Center(
-        child: currentIndex == 0
-            ? _buildHomePage()
-            : currentIndex == 1
-                ? _buildAnalyticsPage()
-                : _buildSettingsPage(),
-=======
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(65.0),
         child: Container(
@@ -73,7 +56,6 @@ class HomePageState extends State<Homepage> {
             ),
           ),
         ),
->>>>>>> arie
       ),
       body: Center(
         child: currentIndex == 0
@@ -92,23 +74,6 @@ class HomePageState extends State<Homepage> {
               width: 0.5,
             ),
           ),
-<<<<<<< HEAD
-          BottomNavigationBarItem(
-            label: "Analytics",
-            icon: Icon(Icons.analytics),
-          ),
-          BottomNavigationBarItem(
-            label: "Settings",
-            icon: Icon(Icons.settings),
-          ),
-        ],
-        currentIndex: currentIndex,
-        onTap: (int index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
-=======
           boxShadow: [
             BoxShadow(
               color: Colors.black26,
@@ -141,55 +106,17 @@ class HomePageState extends State<Homepage> {
           selectedItemColor: const Color(0xFF008000),
           unselectedItemColor: const Color.fromARGB(255, 138, 135, 135),
         ),
->>>>>>> arie
       ),
     );
   }
 
-<<<<<<< HEAD
-=======
   //HOME
->>>>>>> arie
   Widget _buildHomePage() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text(
           'Mold Shield Activity',
-<<<<<<< HEAD
-          style: TextStyle(fontSize: 24),
-        ),
-        const SizedBox(height: 20),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('Anti-Mold Ejector'),
-            Switch(
-              value: isAntiMoldEjectorOn,
-              onChanged: (value) {
-                setState(() {
-                  isAntiMoldEjectorOn = value;
-                  // Add Firebase update code here
-                });
-              },
-            ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('Dehumidifier'),
-            Switch(
-              value: isDehumidifierOn,
-              onChanged: (value) {
-                setState(() {
-                  isDehumidifierOn = value;
-                  // Add Firebase update code here
-                });
-              },
-            ),
-          ],
-=======
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 20),
@@ -367,31 +294,12 @@ class HomePageState extends State<Homepage> {
               ),
             ],
           ),
->>>>>>> arie
         ),
       ],
     );
   }
 
   Widget _buildAnalyticsPage() {
-<<<<<<< HEAD
-    // Placeholder for Analytics Page with Firebase-based data for graphs
-    return const Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          'Analytics Page',
-          style: TextStyle(fontSize: 24),
-        ),
-        SizedBox(height: 20),
-        Text('Graphical data for:'),
-        SizedBox(height: 10),
-        Text('• Particulate Matter Sensor'),
-        Text('• Humidity'),
-        Text('• VOC Sensor'),
-        Text('• Temperature'),
-        // Firebase data graphs go here
-=======
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -549,7 +457,6 @@ class HomePageState extends State<Homepage> {
             ],
           ),
         ),
->>>>>>> arie
       ],
     );
   }
@@ -571,13 +478,9 @@ class HomePageState extends State<Homepage> {
         ),
         ElevatedButton(
           onPressed: () {
-<<<<<<< HEAD
-            // Add "Log Out" functionality
-=======
             // Directly navigate to LoginPage on Log Out
             Navigator.pushReplacementNamed(
                 context, '/'); // Navigates to the LoginPage
->>>>>>> arie
           },
           child: const Text('Log Out'),
         ),
